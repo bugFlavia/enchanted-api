@@ -6,10 +6,11 @@ const usuarios = [
 ]
 
 const getUserAuthenticated = (user) => {
-  
+    usuarios.map(e => e.email === user.email && e.password === user.password);
+    return user ? user : null;
 }
 
 const getUsers = () =>{
-        
+        return usuarios
 }
 export { getUsers, getUserAuthenticated };
