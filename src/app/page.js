@@ -2,6 +2,8 @@
 import { useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -16,7 +18,7 @@ export default function Login() {
       await handlerAcessUser(user);
       push('/pages/dashboard');
     } catch {
-      refresh();
+      toast.error("Erro na aplicação");
     }
   }
   return (
@@ -34,6 +36,7 @@ export default function Login() {
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input>
         <button>Entrar</button>
+        <ToastContainer/>
       </form>
     </div>
   )
