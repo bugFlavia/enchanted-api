@@ -1,5 +1,11 @@
 export default function Register() {
     return (
-        <h1>Alter</h1>
+        <div>
+            <form method="post">
+                <label>Nome:</label><input type="text" placeholder="Digite seu Nome" name="nome"/>
+                <label>E-mail:</label><input type="text" placeholder="Digite seu E-mail" name="email"/>
+                <label>Senha:</label><input type="text" placeholder="Digite uma senha" name="senha"/>          
+            </form>
+        </div>
     );
 };
