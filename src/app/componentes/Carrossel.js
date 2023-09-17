@@ -19,16 +19,11 @@ const Carrossel = () => {
     return () => clearInterval(interval);
   }, [imagens.length]);
 
-  const imagemStyle = {
-    width: '100%', // Define a largura desejada para as imagens (100% da largura do contêiner)
-    height: '70%', // Isso manterá a proporção original da imagem
-  };
-
   return (
     <Carousel className='verdade' selectedItem={imagemID}>
       {imagens.map((image, index) => (
         <div key={index}>
-          <img src={image} style={imagemStyle} alt={`Imagem ${index}`} />
+          <img src={image} alt={`Imagem ${index}`} />
         </div>
       ))}
     </Carousel>
