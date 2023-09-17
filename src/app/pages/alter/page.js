@@ -7,7 +7,7 @@ export default function Alter() {
             toast.success("Dados enviados!");
         }
     return (
-        <div>
+        <div className="geral">
             <form onSubmit={enviado}>
                 <label>Nome:</label><input type="text" placeholder="Digite seu Nome" name="nome"/>
                 <label>E-mail:</label><input type="text" placeholder="Digite seu E-mail" name="email"/>

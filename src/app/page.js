@@ -22,7 +22,7 @@ export default function Login() {
     }
   }
   return (
-    <div>
+    <div className="geral">
       <h1>Login</h1>
       <form onSubmit={handlerLogin}>
         <input
