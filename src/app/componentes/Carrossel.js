@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 
 const Carrossel = () => {
   const imagens = [
-    'https://taylorswiftbr.com/albums/Photoshoots/2023/Speak%20Now%20Taylors%20Version/thumb_TSBR_8.png',
-    'https://taylorswiftbr.com/albums/Photoshoots/2023/Speak%20Now%20Taylors%20Version/thumb_TSBR_1.png',
-    'https://taylorswiftbr.com/albums/Photoshoots/2023/Speak%20Now%20Taylors%20Version/thumb_TSBR_10.png',
-    'https://taylorswiftbr.com/albums/Photoshoots/2023/Speak%20Now%20Taylors%20Version/thumb_TSBR_3.png'
+    'https://taylorswiftbr.com/albums/Photoshoots/2023/Speak%20Now%20Taylors%20Version/TSBR_1.png',
+    'https://taylorswiftbr.com/albums/Photoshoots/2023/Speak%20Now%20Taylors%20Version/TSBR_2.png'
   ];
 
   const [imagemID, setimagemID] = useState(0);
@@ -21,11 +19,16 @@ const Carrossel = () => {
     return () => clearInterval(interval);
   }, [imagens.length]);
 
+  const imagemStyle = {
+    width: '100%', // Define a largura desejada para as imagens (100% da largura do contêiner)
+    height: '70%', // Isso manterá a proporção original da imagem
+  };
+
   return (
     <Carousel className='verdade' selectedItem={imagemID}>
       {imagens.map((image, index) => (
         <div key={index}>
-          <img src={image}/>
+          <img src={image} style={imagemStyle} alt={`Imagem ${index}`} />
         </div>
       ))}
     </Carousel>
