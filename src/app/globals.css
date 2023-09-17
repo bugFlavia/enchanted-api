@@ -29,7 +29,7 @@ nav{
 }
 
 #pesquisa{
-        margin-left:20%;
+        margin-left:15%;
         padding-top: 0px;
         display:flex;
         color: black;
@@ -79,7 +79,7 @@ color: black;
   text-align: center;
   width: 30%;
   border-radius: 5px;
-  box-shadow: 0 5px 70px -12px rgb(0 0 0 / 0.25);
+  box-shadow: 0px 5px 70px -12px #9C90DC;
 }
 
 .usuario h1{
@@ -93,7 +93,7 @@ color: black;
 
 
 form{
-  box-shadow: 0 5px 70px -12px rgb(0 0 0 / 0.25);
+  box-shadow: 0px 5px 70px -12px #9C90DC;
 }
 
 form h1{
@@ -139,5 +139,14 @@ form input{
   bottom: 0;
   padding-left: 250px;
  }
+
+ footer h3{
+  position: absolute;
+  top: 50%;
+  font-weight: bolder;
+  font-size: 28px;
+  transform: translate(70%, -50%);
+  color: white;
+}
 
 
