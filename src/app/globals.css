@@ -4,7 +4,6 @@
 @import '~react-responsive-carousel/lib/styles/carousel.min.css';
 
 *{
-  background-color: #F8AFA6;
   margin: 0;
   padding: 0;
 }
@@ -12,5 +11,114 @@
 .verdade ul{
   display: none;
 }
+
+.geral{
+  background-color: #E9D8F2;
+}
+
+nav{
+  background-image: url('../../public/imagens/logo.png');
+  background-repeat: no-repeat;
+  background-size: 9%;
+  margin-top: 0px;
+  background-color: #8858C7;
+  height: 150px;
+  background-position: 3% 35%;
+  /*margin-bottom: 10px;
+  box-shadow: 10px 5px 5px pink;*/
+}
+
+#pesquisa{
+        margin-left:20%;
+        padding-top: 0px;
+        display:flex;
+        color: black;
+}
+
+#pesquisa input{
+              background-color: transparent;
+              border-bottom: solid black 1px;
+}
+
+nav ul{
+ display: flex;
+ padding-left: 250px;
+ padding-top: 50px;
+
+}
+
+nav ul li{
+  display: flex;
+  flex-wrap: wrap;
+  margin:5px 55px 15px 0px;
+}
+
+#rota{
+color: black;
+font-weight: bold;
+font-family: Georgia, serif;
+font-size: 18px;
+}
+
+#rota:hover{
+  background-image: linear-gradient(to bottom, #9C90DC, #DCD2F0, #9AACDD);
+
+
+background-clip: text;
+-webkit-background-clip: text; 
+
+
+-webkit-text-fill-color: transparent;
+
+
+color: black;
+}
+
+form{
+  box-shadow: 0 5px 70px -12px rgb(0 0 0 / 0.25);
+}
+
+form h1{
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  color: #8858C7;
+
+}
+
+form input{
+  box-shadow: 1px 2px 2px 2px #CCC0EA;
+  padding-left: 10px;
+  border-radius: 3px;
+  height: 30px;
+  
+}
+
+.botao{
+  background-image: linear-gradient(to bottom, #9C90DC, #DCD2F0, #9AACDD);
+  height: 50px;
+  border-radius: 5px;
+  color: White;
+  font-size: 18px;
+  font-weight: bold;
+ 
+}
+ .botao:hover{
+  background-color: #CCC0EA;
+  background-image: none;
+ }
+
+ footer{
+  background-image: url('../../public/imagens/logo.png');
+  background-repeat: no-repeat;
+  background-size: 9%;
+  margin-top: 0px;
+  background-color: #8858C7;
+  background-position: 3% 35%;
+  height: 200px;
+  position: relative;
+  bottom: 0;
+  padding-left: 250px;
+ }
 
 

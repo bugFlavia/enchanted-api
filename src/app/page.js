@@ -25,16 +25,16 @@ export default function Login() {
     }
   }
   return (
-    <div className="geral">
+    <div className="geral h-screen">
 
-      <Navbar></Navbar>
+      <Navbar/>
       
-      <div className="flex justify-center items-center w-100">
-      <Carrossel/>
-      </div>
-
+      
+    <div className='mt-20 pb-24 geral'>
+      <form  className='flex flex-col ml-auto mr-auto w-1/2 bg-white p-10 gap-2 rounded-lg' onSubmit={handlerLogin}>
+        
       <h1>Bem-vindo</h1>
-      <form onSubmit={handlerLogin}>
+        
         <input
           placeholder='E-mail'
           type="email"
@@ -45,9 +45,9 @@ export default function Login() {
           type='password'
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input>
-        <button>Entrar</button>
+        <button className="botao">Entrar</button>
         <ToastContainer/>
-      </form>
+      </form></div>
       <Rodape/>
     </div>
   )
