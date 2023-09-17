@@ -1,3 +1,5 @@
+'use client'
+
 import { Carousel } from 'react-responsive-carousel';
 import { useState, useEffect } from 'react';
 
