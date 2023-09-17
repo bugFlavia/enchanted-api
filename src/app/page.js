@@ -2,6 +2,9 @@
 import { useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
+import Navbar from "./componentes/navbar";
+import Carrossel from "./componentes/Carrossel";
+import Rodape from "./componentes/rodape";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,7 +26,14 @@ export default function Login() {
   }
   return (
     <div className="geral">
-      <h1>Login</h1>
+
+      <Navbar></Navbar>
+      
+      <div className="flex justify-center items-center w-100">
+      <Carrossel/>
+      </div>
+
+      <h1>Bem-vindo</h1>
       <form onSubmit={handlerLogin}>
         <input
           placeholder='E-mail'
@@ -38,6 +48,7 @@ export default function Login() {
         <button>Entrar</button>
         <ToastContainer/>
       </form>
+      <Rodape/>
     </div>
   )
 }
