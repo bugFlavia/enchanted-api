@@ -1,4 +1,5 @@
 'use client'
+import Fallback from "@/app/componentes/fallback";
 import Navbar from "@/app/componentes/navbar";
 import Rodape from "@/app/componentes/rodape";
 import { Suspense } from "react";
