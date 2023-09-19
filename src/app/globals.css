@@ -149,4 +149,17 @@ form input{
   color: white;
 }
 
+.fallback{
+  background-image: url('https://gifs.eco.br/wp-content/uploads/2021/09/gifs-aesthetic-wallpaper-para-desktop-e-mobile-0.gif');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 

@@ -1,12 +1,17 @@
 import Carrossel from "@/app/componentes/carrossel";
 import Navbar from "@/app/componentes/navbar";
 import Rodape from "@/app/componentes/rodape";
+import { Suspense} from "react";
 import { getUsers } from "@/app/functions/handlerAcessAPI";
+import Fallback from "@/app/componentes/fallback";
 
 export default async function Dashboard() {
    const users = await getUsers();
     return (
-        <div className="geral">
+        <div>
+            <Suspense fallback={<Fallback />}>
+           
+           <div className="geral">
             <Navbar/>
         
             <div className="flex justify-center items-center w-100">
@@ -26,6 +31,8 @@ export default async function Dashboard() {
             </div>
             <Rodape/>
             
+        </div>
+        </Suspense>
         </div>
     );
 };
