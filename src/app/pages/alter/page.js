@@ -3,6 +3,7 @@
 import Navbar from "@/app/componentes/navbar";
 import Rodape from "@/app/componentes/rodape";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Alter() {
         const enviado = () => {
@@ -12,7 +13,7 @@ export default function Alter() {
         <div className="geral">
         <Navbar/>
            <div className='mt-20 pb-24 geral'>
-            <form  className='flex flex-col ml-auto mr-auto w-1/2 bg-white p-10 gap-2 rounded-lg' onSubmit={enviado}>
+            <form method="post" className='flex flex-col ml-auto mr-auto w-1/2 bg-white p-10 gap-2 rounded-lg' onSubmit={enviado}>
 
               <h1>Altere um usuário:</h1>
 
