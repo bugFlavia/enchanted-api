@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import handlerAcessUser from "./functions/handlerAcess"
+import getUserAuthenticated from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import Navbar from "./componentes/navbar";
 import Carrossel from "./componentes/carrossel";
@@ -18,7 +18,7 @@ export default function Login() {
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
-      await handlerAcessUser(user);
+      await getUserAuthenticated(user);
       push('/pages/dashboard');
     } catch {
       toast.error("Erro na aplicação");

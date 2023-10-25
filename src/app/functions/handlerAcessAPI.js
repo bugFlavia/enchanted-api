@@ -1,25 +1,30 @@
-'use server'
+const url="https://aula-17-10-lemon.vercel.app";
 
-const usuarios = [
-    {name:"Flavia", email:"verdade@concordo", password:"renatao", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"},
-    {name:"Renatão", email:"renatao@calvo.minoxidil", password:"ciso", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"}
-]
+const getUserAuthenticated = async (user) => { 
+   
+   const responseOfApi = await fetch(url + "/user/authenticated",
+    
+   {
+      method:'POST',
+      headers:{"content-type": "aplication/json"},
+      body: JSON.stringify(user)
+    }
 
+   );
 
-const getUserAuthenticated = (user) => {
-    let userAuth = {};
-    let nomeUsuario = ''
-    usuarios.map((e) => {
-        if(e.email === user.email && e.password === user.password){
-            userAuth = e;
-            nomeUsuario = e.name
-        };
+   const userAuth = await responseOfApi.json();
+   console.log(userAuth)
+   return userAuth;
+    
+ }
+ 
+ const getUsers = async() =>{
+    const responseOfApi = await fetch(url + '/users', {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
     })
-    return {userAuth, nomeUsuario};
-}
+    const users = await responseOfApi.json();
+    return users;
+ }
 
-
-const getUsers = () =>{
-        return usuarios
-}
-export { getUsers, getUserAuthenticated };
+ export {getUsers, getUserAuthenticated}
