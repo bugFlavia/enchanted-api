@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import getUserAuthenticated from "./functions/handlerAcess"
+import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import Navbar from "./componentes/navbar";
 import Carrossel from "./componentes/carrossel";
@@ -18,7 +18,10 @@ export default function Login() {
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
-      await getUserAuthenticated(user);
+      const userAuth = await handlerAcessUser(user);
+      if(userAuth.token === undefined){
+        toast.error("erro no email ou senha")
+      }
       push('/pages/dashboard');
     } catch {
       toast.error("Erro na aplicação");
