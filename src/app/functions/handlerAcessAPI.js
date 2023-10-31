@@ -7,7 +7,7 @@ const getUserAuthenticated = async (user) => {
     
    {
       method:'POST',
-      headers:{"content-type": "aplication/json"},
+      headers:{"content-type": "Application/json"},
       body: JSON.stringify(user)
     }
 
