@@ -4,7 +4,7 @@ import Navbar from "@/app/componentes/navbar";
 import { postUser } from "@/app/functions/handlerAcessAPI";
 import Rodape from "@/app/componentes/rodape";
 import { React, Suspense, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,6 +14,7 @@ export default function Register() {
         email: '',
         password: ''
     });
+    const {push} = useRouter()
 
     const enviado = () => {
         toast.success("Dados enviados!");
@@ -26,7 +27,7 @@ export default function Register() {
             await new Promise((resolve) => {
                 toast.success("Usuário cadastrado com sucesso!");
                 setTimeout(resolve, 5000);
-                enviado(); // Corrected function call
+                enviado();
             });
             return push("/pages/dashboard");
         } catch {
@@ -44,9 +45,9 @@ export default function Register() {
 
                             <h1>Registre um usuário:</h1>
 
-                            <input type="text" placeholder="Digite seu Nome" name="name" required /> {/* Corrected name */}
-                            <input type="email" placeholder="Digite seu E-mail" name="email" required />
-                            <input type="password" placeholder="Digite uma senha" name="password" required /> {/* Corrected name */}
+                            <input type="text" placeholder="Digite seu Nome" name="name" required  onChange={(e) => { setUser({ ...user, name: e.target.value }) }}/> {/* Corrected name */}
+                            <input type="email" placeholder="Digite seu E-mail" name="email" required onChange={(e) => { setUser({ ...user, email: e.target.value }) }} />
+                            <input type="password" placeholder="Digite uma senha" name="password" required onChange={(e) => { setUser({ ...user, password: e.target.value }) }} /> {/* Corrected name */}
                             <button className="botao">Enviar</button>
                         </form>
                         <ToastContainer />
