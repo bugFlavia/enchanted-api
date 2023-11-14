@@ -1,15 +1,37 @@
 'use client'
 import Fallback from "@/app/componentes/fallback";
 import Navbar from "@/app/componentes/navbar";
+import { postUser } from "@/app/functions/handlerAcessAPI";
+import React, {useState} from 'react'
 import Rodape from "@/app/componentes/rodape";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        password: ''
+    })
+    const {push} = useRouter();
     const enviado = () => {
         toast.success("Dados enviados!");
     }
+
+    const handlerFormSubmit = async (event) =>{
+        event.preventDefault();
+        try{
+            await postUser(user);
+            await new Promise((resolve) => {
+                toast.success("Usuário cadastrado com sucesso!");
+                setTimeout(resolve, 5000);
+            })
+            return push("/pages/dashboard");
+        }catch{
+            return toast.error("Erro")
+        }
+    };
     return (
         <div>
             <Suspense fallback={<Fallback />}>
