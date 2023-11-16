@@ -22,6 +22,7 @@ const getUserAuthenticated = async (user) => {
  const getUsers = async() =>{
     const responseOfApi = await fetch(url + '/users', {
         method: "GET",
+        next: {revalidate: 1},
         headers: {"Content-Type": "application/json"}
     })
     const users = await responseOfApi.json();
