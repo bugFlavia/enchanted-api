@@ -32,7 +32,7 @@ const getUserAuthenticated = async (user) => {
  const postUser = async(user)=>{
    try{
       const responseOfApi = await fetch(url + "/user", {
-         method: "Post",
+         method: "POST",
          headers: {'Content-Type': 'Application/json'},
          body: JSON.stringify(user)
       });
@@ -44,4 +44,19 @@ const getUserAuthenticated = async (user) => {
    }
  }
 
- export {getUsers, postUser, getUserAuthenticated}
+ const UpdateUser = async(user, id)=>{
+   try{
+      const responseOfApi = await fetch(url + "/user/" + id, {
+         method: "PUT",
+         headers: {'Content-Type': 'Application/json'},
+         body: JSON.stringify(user)
+      });
+      const userUpdate = await responseOfApi.json();
+      return userUpdate
+   }
+   catch{
+      return null
+   }
+ }
+
+ export {getUsers, postUser, getUserAuthenticated, UpdateUser}
