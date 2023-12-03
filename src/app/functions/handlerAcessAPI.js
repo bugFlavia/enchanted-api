@@ -29,20 +29,25 @@ const getUserAuthenticated = async (user) => {
     return users;
  }
 
- const postUser = async(user)=>{
-   try{
-      const responseOfApi = await fetch(url + "/user", {
-         method: "POST",
-         headers: {'Content-Type': 'Application/json'},
-         body: JSON.stringify(user)
-      });
-      const userSave = await responseOfApi.json();
-      return userSave
+ const postUser = async (user) => {
+   try {
+       console.log("Sending user data:", user);
+
+       const responseOfApi = await fetch(url + "/user", {
+           method: "POST",
+           headers: { 'Content-Type': 'Application/json' },
+           body: JSON.stringify(user)
+       });
+
+       const userSave = await responseOfApi.json();
+       console.log("Response from server:", userSave);
+
+       return userSave;
+   } catch (error) {
+       console.error("Error during user registration:", error);
+       return null;
    }
-   catch{
-      return null
-   }
- }
+};
 
  const UpdateUser = async(user, id)=>{
    try{
