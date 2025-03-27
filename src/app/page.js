@@ -3,7 +3,7 @@ import { useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import Navbar from "./componentes/navbar";
-import Carrossel from "./componentes/carrossel";
+import Carrossel from "./componentes/Carrossel";
 import Rodape from "./componentes/rodape";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

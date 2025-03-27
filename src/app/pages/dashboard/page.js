@@ -1,4 +1,4 @@
-import Carrossel from "@/app/componentes/carrossel";
+import Carrossel from "@/app/componentes/Carrossel";
 import Navbar from "@/app/componentes/navbar";
 import Rodape from "@/app/componentes/rodape";
 import { Suspense} from "react";
